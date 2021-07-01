@@ -1,0 +1,30 @@
+* Firefox Vertical Tabs
+Vertical tabs for Firefox, inspired by Edge.
+
+Works with Light theme, Dark theme, and System theme (auto dark mode).
+There are some minor glitches with Alpenglow, but they should be easy to fix.
+
+** Screenshots
+[[./screenshots/dark1.png]]
+
+[[./screenshots/dark2.png]]
+
+[[./screenshots/light1.png]]
+
+[[./screenshots/light2.png]]
+
+** Compatibility
+I have only tested this for Linux and macOS. There might be some bugs on Windows because the window decorations look different.
+I can't test this because I don't have a Windows computer, but if you find any bugs and know how to fix it, feel free to submit a PR.
+
+** How to install
+- Go to [[about:config][about:config]], search for ~toolkit.legacyUserProfileCustomizations.stylesheets~ and set it to ~true~.
+- Add the ~userChrome.css~ to your Firefox profile.
+- Install [[https://framagit.org/ariasuni/tabcenter-reborn/-/wikis/home][Tab Center Reborn]] extension.
+- Go to [[about:addons][about:addons]], select Tab Center Reborn, go to Preferences and set:
+  + Animations: on.
+  + Use current browser theme: on, if you want to use dark mode.
+  + Compact Mode: either "Dynamic" or "Enabled". It works with "Disabled" too but looks nicer with only favicons.
+  + Favicon-only pinned tabs: off.
+  + Activate "Custom Stylesheet" and paste the contents of ~tabCenterReborn.css~ into the text area, and click "Save CSS".
+- Restart Firefox.

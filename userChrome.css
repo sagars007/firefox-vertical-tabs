@@ -1,0 +1,113 @@
+#statuspanel {
+    position: fixed;
+    right: -17px;
+    bottom: 0;
+    text-align: right;
+}
+
+#TabsToolbar:not([customizing="true"]) {
+    visibility: collapse !important;
+}
+
+#toolbar-menubar {
+    padding-top: 0px !important;
+}
+
+#TabsToolbar:not([customizing="true"]) {
+    visibility: collapse !important;
+}
+
+#toolbar-menubar {
+    padding-top: 0px !important;
+}
+
+#nav-bar {
+    padding-left: 80px;
+}
+
+#TabsToolbar .titlebar-buttonbox-container {
+    visibility: visible !important;
+    position: absolute;
+    top: 12px;
+    left: 0px;
+}
+
+.titlebar-buttonbox-container {
+    display: block;
+}
+
+.titlebar-button > .toolbarbutton-icon {
+    height: 13x !important;
+    min-height: 13px !important;
+    width: 13px !important;
+    min-width: 13px !important;
+}
+
+.titlebar-button {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+    padding-top: 6px !important;
+}
+
+.titlebar-placeholder[type="pre-tabs"] {
+    width: 120px !important;
+}
+
+titlebar-buttonbox-container {
+    -moz-box-ordinal-group: 0;
+}
+
+#sidebar-box #sidebar-header {
+    visibility: collapse;
+    display: none;
+}
+
+#sidebar-box:not([hidden]) {
+    display: block;
+    position: fixed;
+    min-width: 48px;
+    max-width: 48px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+    border-right: 1px solid var(--sidebar-border-color);
+    z-index:1;
+}
+
+#sidebar,
+#sidebar-box:hover {
+    min-width: 20vw !important;
+    max-width: 20vw !important;
+}
+
+#sidebar-splitter {
+    display: none;
+}
+
+#sidebar {
+    height: calc(100vh - 32px);
+}
+
+#sidebar-box:not([hidden]) ~ #appcontent {
+    margin-left: 48px;
+}
+
+#main-window[inFullscreen][inDOMFullscreen] #appcontent {
+    margin-left: 0;
+}
+
+#main-window[inFullscreen] #sidebar {
+    height: 100vh;
+}
+
+#sidebar-header {
+    background: #0C0C0D;
+    border-bottom: none !important;
+}
+#sidebar-splitter {
+    border-right-color: #0C0C0D !important;
+    border-left-color: #0C0C0D !important;
+}
+#sidebar-switcher-target,
+#sidebar-close {
+    filter: invert(100%);
+}

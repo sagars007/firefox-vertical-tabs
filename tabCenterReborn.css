@@ -1,0 +1,102 @@
+/* Overwrite some colours */
+:root {
+    --tab-separator: transparent;
+    --tab-selected-line: transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #1c1b22;
+        --icons: rgb(251,251,254);
+        --tab-separator: transparent;
+        --tab-active-background: rgb(66,65,77);
+        --tab-active-text: rgb(251,251,254);
+        --tab-text: #fbfbfe;
+        --toolbar-background: rgb(43,42,51);
+        --toolbar-text: rgb(251, 251, 254);
+        --input-background: rgb(28,27,34);
+        --input-border: transparent;
+        --input-background-focus: rgb(66,65,77);
+        --input-selected-text: rgb(251,251,254);
+        --input-text: rgb(251,251,254);
+        --input-text-focus: rgb(251,251,254);
+        --identity-color-toolbar: rgb(251,251,254);
+    }
+}
+
+/* Move topmenu to bottom */
+#topmenu {
+    order: 2;
+    background: transparent;
+    border: none;
+}
+
+#newtab {
+    margin-left: 6px;
+}
+
+#settings {
+    margin-right: 2px;
+}
+
+/* Hide filterbox */
+#filterbox-icon,
+#filterbox-input {
+    display: none;
+}
+
+/* Right-align settings icon */
+#settings {
+    margin-left: auto;
+}
+
+#tablist-wrapper {
+    height: auto;
+    margin: 0 6px;
+}
+
+#tablist-wrapper::after {
+    content: "";
+    max-width: 34px;
+    margin: 2px 0;
+    border: 1px solid #333;
+    transition: max-width 0.2s ease;
+}
+
+#tablist-wrapper .tab-title-wrapper {
+    visibility: hidden;
+}
+
+.tab {
+    max-width: 36px;
+    border-radius: 4px;
+    margin: 1px 0;
+    transition: max-width 0.2s ease;
+}
+
+#pinnedtablist:not(.compact) .tab, #tablist .tab {
+    padding: 0;
+}
+
+#pinnedtablist:not(.compact) .tab {
+    padding-left: 6px;
+}
+
+/* Show more when hovering over the sidebar */
+body:hover #tablist-wrapper .tab-title-wrapper {
+    visibility: visible;
+}
+
+body:hover #newtab::after {
+    content: "New tab";
+    margin-left: 10px;
+}
+
+body:hover #tablist-wrapper::after,
+body:hover .tab {
+    max-width: 100%;
+}
+
+body:hover #pinnedtablist:not(.compact) .tab {
+    padding-left: 0;
+}
