@@ -4,6 +4,8 @@ Vertical tabs for Firefox, inspired by Edge.
 Works with Light theme, Dark theme, and System theme (auto dark mode).
 There are some minor glitches with Alpenglow, but they should be easy to fix.
 
+It also plays nice with Container Tabs.
+
 ** Screenshots
 [[./screenshots/dark1.png]]
 
