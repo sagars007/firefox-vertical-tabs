@@ -53,7 +53,7 @@
     width: 120px !important;
 }
 
-titlebar-buttonbox-container {
+.titlebar-buttonbox-container {
     -moz-box-ordinal-group: 0;
 }
 
