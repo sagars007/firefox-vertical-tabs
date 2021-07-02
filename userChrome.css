@@ -1,9 +1,5 @@
-#statuspanel {
-    position: fixed;
-    right: -17px;
-    bottom: 0;
-    text-align: right;
-}
+/* only for MacOS, Linux. If you get a better OS selector for MacOS/Linux u can use it below*/
+@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
 
 #TabsToolbar:not([customizing="true"]) {
     visibility: collapse !important;
@@ -56,6 +52,72 @@
 .titlebar-buttonbox-container {
     -moz-box-ordinal-group: 0;
 }
+
+}
+
+/* only for Windows */
+@media (-moz-os-version: windows-win10) { 
+
+    /* Hide main tabs toolbar */
+    
+    :root[tabsintitlebar]{
+        --uc-window-control-width: 138px; /* Space at the right of nav-bar for window controls */
+        /* --uc-window-drag-space-width: 24px; */  /* To add extra window drag space in nav-bar */
+      }
+      
+      #nav-bar{
+        border-inline: var(--uc-window-drag-space-width,0px) solid var(--toolbar-bgcolor) ;
+        border-inline-style: solid !important;
+        border-right-width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-width,0px));
+        
+        padding-top: 0px !important;
+      }
+      
+      
+      
+      :root{ --uc-toolbar-height: 32px; }
+      
+      :root:not([uidensity="compact"]){--uc-toolbar-height: 38px}
+      
+      :root {
+        
+        --chrome-content-separator-color: none !important;
+          
+      }
+      
+      #TabsToolbar{ visibility: collapse !important }
+      
+      :root:not([inFullscreen]) #nav-bar{
+        margin-top: calc(0px - var(--uc-toolbar-height));
+      }
+      
+      #toolbar-menubar{
+        min-height:unset !important;
+        height:var(--uc-toolbar-height) !important;
+        position: relative;
+      }
+      
+      #main-menubar{
+        -moz-box-flex: 1;
+        background-color: var(--toolbar-bgcolor,--toolbar-non-lwt-bgcolor);
+        background-clip: padding-box;
+        border-right: 30px solid transparent;
+        border-image: linear-gradient(to left, transparent, var(--toolbar-bgcolor,--toolbar-non-lwt-bgcolor) 30px) 20 / 30px
+      }
+      
+      #toolbar-menubar:not([inactive]){ z-index: 2 }
+      #toolbar-menubar[inactive] > #menubar-items {
+        opacity: 0;
+        pointer-events: none;
+        margin-left: var(--uc-window-drag-space-width,0px)
+      }
+      
+      
+      :root[inFullscreen] #nav-bar{
+      border-inline: none !important;
+      }
+    
+    }
 
 #sidebar-box #sidebar-header {
     visibility: collapse;
@@ -111,3 +173,4 @@
 #sidebar-close {
     filter: invert(100%);
 }
+
