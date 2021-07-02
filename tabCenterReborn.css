@@ -2,6 +2,7 @@
 :root {
     --tab-separator: transparent;
     --tab-selected-line: transparent;
+    --tablist-separator: #cccccc;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,6 +22,7 @@
         --input-text: rgb(251,251,254);
         --input-text-focus: rgb(251,251,254);
         --identity-color-toolbar: rgb(251,251,254);
+        --tablist-separator: #333333;
     }
 }
 
@@ -59,22 +61,27 @@
     content: "";
     max-width: 34px;
     margin: 2px 0;
-    border: 1px solid #333;
-    transition: max-width 0.2s ease;
+    border: 1px solid var(--tablist-separator);
+    transition: all 0.2s ease;
+    transition-delay: 200ms;
 }
 
 #tablist-wrapper .tab-title-wrapper {
     visibility: hidden;
+    transition: all 0.2s ease;
+    transition-delay: 200ms;
 }
 
-.tab {
+.tab,
+.tab.active {
     max-width: 36px;
     border-radius: 4px;
     margin: 1px 0;
-    transition: max-width 0.2s ease;
+    transition: max-width 12s ease;
 }
 
-#pinnedtablist:not(.compact) .tab, #tablist .tab {
+#pinnedtablist:not(.compact) .tab,
+#tablist .tab {
     padding: 0;
 }
 
@@ -87,9 +94,16 @@ body:hover #tablist-wrapper .tab-title-wrapper {
     visibility: visible;
 }
 
-body:hover #newtab::after {
+body #newtab::after {
     content: "New tab";
+    visibility: hidden;
     margin-left: 10px;
+    transition: all 0.2s ease;
+    transition-delay: 200ms;
+}
+
+body:hover #newtab::after {
+    visibility: visible;
 }
 
 body:hover #tablist-wrapper::after,
